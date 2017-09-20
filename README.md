@@ -4,6 +4,8 @@ Ce site est une démonstration des suites de Conway inspirée par la [vidéo](ht
 
 # Démonstration
 
-![Imgur](https://i.imgur.com/xgdeV4j.gifv)
-
 [demo](http://conway.cheredeprince.net/)
+
+![Imgur](https://i.imgur.com/xgdeV4j.gif)
+
+
