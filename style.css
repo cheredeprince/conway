@@ -1,0 +1,302 @@
+html,body,div{
+    margin:0;
+    padding:0;
+    font-size: 100%;
+    font-family: monospace;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.seq{
+    overflow: auto;
+    z-index: 10;
+    position: absolute;
+    margin:0;
+    top: 2.75em;
+    left:0;
+    right: 0;
+    height: 15em;
+    text-align: center;
+    background: black;
+
+    transition-property: bottom,top;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+.control-box{
+    margin-top : 0.25em; 
+    text-align:center;
+    height: 2.5em;
+}
+#start{
+    display: inline;
+    margin: 0;
+    padding:0;
+}
+
+#seed{
+    max-width: 40%;
+    background: white;
+    border: 1px gray solid;
+    color: black;
+    text-align: center;
+    line-height: 2em;
+}
+
+.but{
+    background: black;
+    border: 1px gray solid;
+    color: white;
+    text-align: center;
+    margin: 0;
+    min-width: 4em;
+    height: 2em;
+    max-width: 25%;
+    cursor: pointer;
+}
+
+.but:hover,#seed:hover{
+    background: white;
+    color: black;
+}
+
+.but:disabled{
+    color: grey;
+    border-style: dashed;
+}
+
+.pause-but:after{
+    z-index: 20;
+    width: 0;
+    height: 0;
+    border: 2.4em solid transparent;
+    border-left-color: white;
+    border-left-width: 3.6em;
+}
+
+.start-but{
+
+}
+
+.hidden{
+    width: 0;
+    height:0;
+    position: fixed;
+    opacity:0;
+}
+
+.slide-label{
+    display: block;
+    position: absolute;
+    z-index: 23;
+    top:  17.75em;
+    left: 50%;
+    left: calc(50%-.5em);
+    width: 0;
+    height: 0;
+    margin: auto 0;
+    border-left: 1em  solid transparent;
+    border-right: 1em  solid transparent;
+    border-top: 1em  solid white;
+}
+
+#slide:checked ~ .seq{
+    z-index:24;
+    height: initial;
+    top: 2.75em;
+    bottom: 0;
+} 
+
+#slide:checked ~ .slide-label{
+    z-index: 25;
+    margin-top: -1em;
+    top: 100%;
+    border-top: none;
+    border-bottom: 1em solid white;
+}
+
+
+.slide-label:hover{
+    cursor :pointer;
+}
+
+.naturel{
+    background : purple;
+}
+
+.mixin{
+    background: maroon;
+}
+
+.exotic{
+    background: olive;
+}
+
+.exotic li:last-child:after{
+    content:"phase exotique";
+}
+
+.mixin li:last-child:after{
+    content:"phase mixte";
+}
+
+.naturel li:last-child:after{
+    content:"phase naturelle";
+}
+
+.list{
+    margin: 0;
+    padding: 0 2em;
+}
+
+.list li{
+    border-bottom: gray 1px dashed;
+    padding:0;
+    font-size: 0.75em;
+}
+
+.list li:last-child:after{
+    padding: 0.25em 0;
+    font-family: "serif";
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+}
+
+.list li p {
+    margin:0;
+    padding: 0.33em 0;
+    
+}
+
+.graph-but{
+    font-size: 1em;
+    position: absolute;
+    z-index: 23;
+    top: 18.25em;
+    height:3em;
+    width: 3em;
+    border: none;
+    background: none;
+    padding:0;
+    margin:0;
+    cursor: pointer;
+
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+.graph-but:hover{
+    transform: rotate(180deg);
+}
+
+
+#container{
+    z-index: 22;
+    font-size: 100%;
+    position: absolute;
+    top:17.75em; /*13.3125em;*/
+    bottom: 0;
+    left: 0;
+    right:0;
+}
+body{
+    font-size: 100%;
+    background: black;
+    color: white;
+}
+
+.warm{
+    background: red;
+}
+
+.info{
+    margin-top : .5em; 
+    padding:0 0.5em ;
+    text-align: left;
+    position: relative;
+}
+
+.info p svg{
+    display: inline;
+    height: 2em;
+    vertical-align: middle;
+}
+
+.info a {
+    color: white;
+}
+
+.info a:visited{
+    color: gray;
+}
+
+.info .follow-cont{
+    width: 4.30769231em; /* 14 /(6.5/2))*/
+    position: absolute;
+    /*! display: inline-block; */
+}
+
+.info .link-video{
+    margin: 0;
+    padding:0;
+    display: inline-block;
+    margin-left: 4.30769231em;
+    height: 14em;
+}
+
+.info .link-video img{
+    width: 100%;    
+    max-height: 14em;
+}
+
+.info .info-box p{
+    margin: .5em;
+}
+
+@media all and (min-width: 29.30769231em){
+    .info .follow-cont{
+        position: inherit;
+    }
+    
+    .info .link-video{
+        margin: 0;
+    }
+    
+    .info .follow-cont,.info .link-video,.info .info-box{
+	float: left;
+    }
+
+    .info .info-box{
+	width: 14em;
+	/*! height: 14em; */
+	b: ;
+    }
+
+    .info .link-video img{
+	height: 14em;
+	width: auto;
+    }
+    
+    
+}
+
+.credit{
+    padding-top: 1em;
+    clear: both;
+}
+
+
+.follow-box,.follow-title{
+  display: block;
+}
+
+.follow-box svg,.follow-title svg{
+  display: block;
+  width: 100%;
+  height: auto;
+}
